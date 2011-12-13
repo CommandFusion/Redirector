@@ -24,7 +24,7 @@ cf-hardware-uuid: device ID
 $udid = $_SERVER['HTTP_CF_HARDWARE_UUID'];
 
 // The default GUI file to serve if the Device ID is not matched
-$theGUI = "Default/DefaultGUI.gui";
+$theGUI = "Default/Default GUI.gui";
 
 switch ($udid) {
 	case 'ebe1c2e438cce5e363fc42e54393ae3a068e12ee':
@@ -33,7 +33,7 @@ switch ($udid) {
 		break;
 	case 'fdabca935c8bfa4ecb1cba278209656caba419f7':
 		// CommandFusion iPad
-		$theGUI = "SmithResidence/smith.gui";
+		$theGUI = "Smith Residence/smith.gui";
 		break;
 }
 
@@ -41,7 +41,8 @@ switch ($udid) {
 if (!file_exists($theGUI)) {
 	echo "Error: The file '".$theGUI."' could not be found.";
 } else {
-	header('Location: '.$theGUI);
+	// We must ensure spaces and other on-standard URL characters are encoded correctly before performing the redirect
+	header('Location: '. htmlspecialchars($theGUI));
 }
 
 /* Function to check if the URL exists for the GUI file.
