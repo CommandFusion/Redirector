@@ -11,7 +11,10 @@ When iViewer issues its request for the GUI file, it includes the following HTTP
 * cf-hardware: iPad
 * cf-hardware-os: iPhone OS
 * cf-hardware-os-version: 5.0.1
-* cf-hardware-uuid: device ID here
+* cf-hardware-uuid: device ID here (if iOS allows applications access, otherwise it's the same as cf-uuid)
+* cf-uuid: new unique identifier used by CommandFusion for device registration (due to Apple removing access to hardware ID in recent iOS releases)
+* cf-new-udid: This header is being phased out in future iViewer versions. Same as cf-uuid.
+* cf-old-udid: Depending on the access level iOS offers applications, this could contain the hardware ID or the CommandFusion device ID.
 
 Of course the exact client, version, screensize, etc, will be reflective of the actual iViewer version being used, and the device requesting the file.
 

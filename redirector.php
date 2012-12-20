@@ -53,4 +53,13 @@ function url_exists($url) {
 }
 */
 
+/*
+$guifile = file_get_contents($_GET['g']);
+$find = "<commandPort>8020</commandPort>";
+$replace = "<commandPort>" . $_GET['p'] . "</commandPort>";
+
+$guifile = str_replace($find, $replace, $guifile);
+echo $guifile;
+*/
+
 ?>
